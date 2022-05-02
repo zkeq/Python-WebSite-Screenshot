@@ -7,7 +7,7 @@ def get_screenshot(url, width, height):
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options, executable_path="chromedriver")
     print("正在尝试初始化窗口大小：", url)
     driver.set_window_size(width, height)
     print("正在获取网页")

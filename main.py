@@ -9,11 +9,24 @@ import os
 from io import BytesIO
 from baijiahao import updateImage
 
-app = FastAPI(docs_url=None, redoc_url=None)
+app = FastAPI()
 
 
 @app.get("/")
-def main(url, save=False, upload=False, json=False, width=1920, height=1080):
+def main(url=None, save: bool = False, upload: bool = False, json: bool = False, width=1920, height=1080):
+    """
+    url 为必填参数
+    其他选填
+    :param url:
+    :param save:
+    :param upload:
+    :param json:
+    :param width:
+    :param height:
+    :return:
+    """
+    if not url:
+        return {"docs": "http://127.0.0.1:61/docs"}
     # 读取png格式的图片
     content = BytesIO(get_screenshot(url, width, height))
     if upload:
@@ -27,7 +40,7 @@ def main(url, save=False, upload=False, json=False, width=1920, height=1080):
         host = urlparse(url).netloc
         host_dir = os.path.join("save", host)
         path = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
-        path_dir = os.path.join("save", host, path + ".png",)
+        path_dir = os.path.join("save", host, path + ".png", )
         # 如果文件夹不存在就创建
         if not os.path.exists(host_dir):
             os.mkdir(host_dir)
