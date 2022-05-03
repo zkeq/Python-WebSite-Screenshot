@@ -3,8 +3,7 @@ import requests
 
 # 上传图片
 def updateImage(content):
-    # 百家号图床链接不开源（:
-    _upload_url = ""
+    _upload_url = "https://baijiahao.baidu.com/builderinner/api/content/file/upload"
     files = {'media': content}
     upload_res = requests.post(_upload_url, files=files)
     print('正在上传')

@@ -1,20 +1,21 @@
 # coding:utf-8
-from selenium import webdriver
+from pyppeteer import launch
+from io import BytesIO
 
 
-def get_screenshot(url, width, height):
+async def get_screenshot(url, width, height):
     print("正在初始化浏览器")
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--no-sandbox')
-    driver = webdriver.Chrome(options=chrome_options, executable_path="chromedriver")
-    print("正在尝试初始化窗口大小：", url)
-    driver.set_window_size(width, height)
-    print("正在获取网页")
-    driver.get(url)
-    print("获取网页成功，正在截图")
-    pic_file = driver.get_screenshot_as_png()
-    print("截图成功")
-    driver.quit()
-    return pic_file
-
+    browser = await launch()
+    print("正在打开浏览器")
+    page = await browser.newPage()
+    print("正在设置页面大小%s*%s" % (width, height))
+    await page.setViewport({"width": width, "height": height})
+    print("正在打开页面: %s" % url)
+    await page.goto(url)
+    print("正在截图")
+    content = await page.screenshot()
+    print("正在转换截图类型")
+    content = BytesIO(content)
+    print("正在关闭浏览器")
+    await browser.close()
+    return content
