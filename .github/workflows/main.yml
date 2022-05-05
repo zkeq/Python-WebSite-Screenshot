@@ -2,13 +2,12 @@ name: GetDataBase Execute Every Day .
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 9 * * *'
+    - cron:  '0 9 * * *'  
   repository_dispatch:
     types:
       - GetDataBase
-    watch:
-       types: [started]
-
+  watch:
+    types: [started]
 jobs:
   Crawler:
     name: Crawler
