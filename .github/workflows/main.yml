@@ -41,7 +41,19 @@ jobs:
             && chromedriver --version
       - name: 'Install requirements'
         run: pip install -r ./requirements.txt
-      - name: 'Working'
+
+      - name: 'ALL IN ONE'
+        run: python ./main.py
+
+      - name: Commit ALL IN ONE files
         run: |
-          python ./test.py
+          git config --local user.email "admin@icodeq.com"
+          git config --local user.name "zkeq"
+          git add .
+          git commit -m "GitHub Actions Crawler ALL IN ONE at $(date +'%Y-%m-%d %H:%M:%S')"
          
+      - name: Push changes
+        uses:  ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
