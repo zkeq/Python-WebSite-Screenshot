@@ -47,7 +47,7 @@ for i in data:
     pic = get_screenshot(url, width, height, timeout, real_time_out)
     # 写入文件
     host = urlparse(url).netloc
-    host_dir = os.path.join("save", host)
+    host_dir = os.path.join("/save", host)
     path = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     path_dir = os.path.join("save", host, path + ".png")
     if not os.path.exists(host_dir):
