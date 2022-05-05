@@ -1,22 +1,27 @@
-name: GetDataBase Execute Every Day .
-on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '0 9 * * *'
-  repository_dispatch:
-    types:
-      - GetDataBase
-  watch:
-    types: [started]
+name: selenium
 
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  Crawler:
-    name: Crawler
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: 'Set up Python'
@@ -34,31 +39,9 @@ jobs:
             && sudo mv chromedriver /usr/local/bin/chromedriver \
             && sudo chmod +x /usr/local/bin/chromedriver \
             && chromedriver --version
-
       - name: 'Install requirements'
+        run: pip install -r ./requirements.txt
+      - name: 'Working'
         run: |
-          pip install -r ./requirements.txt
-
-      - name: 'ALL IN ONE'
-        run: python ./main.py
-
-      - name: Commit ALL IN ONE files
-        run: |
-          git config --local user.email "admin@icodeq.com"
-          git config --local user.name "zkeq"
-          git add .
-          git commit -m "GitHub Actions Crawler ALL IN ONE at $(date +'%Y-%m-%d %H:%M:%S')"
-
-      - name: "MAKE readme.md file"
-        run: python ./make_readme.py
-
-      - name: Commit readme.md files
-        run: |
-          git add .
-          git commit -m "GitHub Actions MAKE README.md at $(date +'%Y-%m-%d %H:%M:%S')"
-
-      - name: Push changes
-        uses:  ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.MY_GIT_TOKEN }}
-          branch: main
+          python ./test.py
+         
