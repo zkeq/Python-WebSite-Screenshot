@@ -6,8 +6,8 @@ on:
   repository_dispatch:
     types:
       - GetDataBase
-   watch:
-     types: [started]
+  watch:
+    types: [started]
 
 jobs:
   Crawler:
