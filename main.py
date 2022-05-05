@@ -3,7 +3,6 @@ import os
 import json
 import time
 from urllib.parse import urlparse
-
 from worker_ import get_screenshot
 
 # 读取list.json文件

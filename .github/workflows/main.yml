@@ -40,8 +40,6 @@ jobs:
           pip install -r ./requirements.txt
 
       - name: 'ALL IN ONE'
-        env:
-          PASSWORD: ${{ secrets.PASSWORD }}
         run: python ./main.py
 
       - name: Commit ALL IN ONE files
