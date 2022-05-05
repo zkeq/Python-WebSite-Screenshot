@@ -1,0 +1,54 @@
+name: GetDataBase Execute Every Day .
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 9 * * *'
+  repository_dispatch:
+    types:
+      - GetDataBase
+   watch:
+     types: [started]
+
+jobs:
+  Crawler:
+    name: Crawler
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+           python-version: 3.7
+
+      - name: 'Install requirements'
+        run: |
+          pip install -r ./requirements.txt
+
+      - name: 'ALL IN ONE'
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: python ./main.py
+
+      - name: Commit ALL IN ONE files
+        run: |
+          git config --local user.email "admin@icodeq.com"
+          git config --local user.name "zkeq"
+          git add .
+          git commit -m "GitHub Actions Crawler ALL IN ONE at $(date +'%Y-%m-%d %H:%M:%S')"
+
+      - name: "MAKE readme.md file"
+        run: python ./make_readme.py
+
+      - name: Commit readme.md files
+        run: |
+          git add .
+          git commit -m "GitHub Actions MAKE README.md at $(date +'%Y-%m-%d %H:%M:%S')"
+
+      - name: Push changes
+        uses:  ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.MY_GIT_TOKEN }}
+          branch: main
