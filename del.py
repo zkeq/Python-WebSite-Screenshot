@@ -17,7 +17,9 @@ for i in data:
     for root, dirs, files in os.walk(work_dir):
         for file in files:
             file_path = os.path.join(root, file)
+            print("find file:", file_path)
             file_time = os.path.getmtime(file_path)
+            print("file time:", file_time)
             # 86400
             if file_time < 10 * day_del:
                 os.remove(file_path)    # 删除文件
