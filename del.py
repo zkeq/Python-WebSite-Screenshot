@@ -12,7 +12,7 @@ data = get_json()
 for i in data:
     work_dir = urlparse(i['url']).netloc
     print("del ing:", work_dir)
-    day_del = i["day_del"]
+    day_del = i["daydel"]
     # 找出文件名在8天前的文件
     for root, dirs, files in os.walk(work_dir):
         for file in files:
