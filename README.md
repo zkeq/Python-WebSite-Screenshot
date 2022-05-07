@@ -2,7 +2,7 @@
 
 ### 本项目是由 `Python` 写成的网站截图工具。
 
-> 支持中文网站截图，该功能由 [valetzx](https://github.com/zkeq/Python-WebSite-Screenshot/pull/1) 开发。
+> 支持中文网站截图，该功能由 [@valetzx](https://github.com/zkeq/Python-WebSite-Screenshot/pull/1) 开发。
 
 #### 使用方法
 
