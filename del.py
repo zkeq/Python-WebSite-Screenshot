@@ -14,7 +14,7 @@ for i in data:
     print("del ing:", work_dir)
     day_del = i["daydel"]
     # 找出文件名在8天前的文件
-    for root, dirs, files in os.walk(work_dir):
+    for root, dirs, files in os.walk(os.path.join("save",work_dir)):
         for file in files:
             file_path = os.path.join(root, file)
             print("find file:", file_path)
