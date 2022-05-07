@@ -57,6 +57,9 @@ jobs:
       - name: 'ALL IN ONE'
         run: python ./main.py
 
+      - name: 'DELETE DAYDEL FILES'
+        run: python ./del.py
+
       - name: Commit ALL IN ONE files
         run: |
           git config --local user.email "admin@icodeq.com"

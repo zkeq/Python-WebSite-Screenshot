@@ -4,20 +4,23 @@
     "timeout": 10,
     "real_time_out": 5,
     "height": 1080,
-    "width": 1920
+    "width": 1920,
+    "daydel": 1
   },
   {
     "url": "https://blog.learnonly.xyz",
     "timeout": 10,
     "real_time_out": 0,
     "height": 1080,
-    "width": 1920
+    "width": 1920,
+    "daydel": 1
   },
   {
     "url": "https://icodeq.com",
     "timeout": 10,
     "real_time_out": 0,
     "height": 1080,
-    "width": 1920
+    "width": 1920,
+    "daydel": 1
   }
 ]
