@@ -11,6 +11,7 @@ from selenium import webdriver
 def get_screenshot(url, width, height, timeout, real_time_out):
     print("正在初始化浏览器")
     chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('lang=zh_CN.UTF-8')
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-gpu')
