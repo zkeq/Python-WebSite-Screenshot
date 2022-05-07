@@ -1,4 +1,4 @@
-![Python-WebSite-Screenshot](https://socialify.git.ci/zkeq/Python-WebSite-Screenshot/image?description=1&font=Bitter&forks=1&language=1&name=1&owner=1&pattern=Plus&stargazers=1&theme=Dark)
+![Python-WebSite-Screenshot](https://socialify.git.ci/zkeq/Python-WebSite-Screenshot/image?description=1&font=Bitter&forks=1&language=1&owner=1&pattern=Plus&stargazers=1&theme=Dark)
 
 ### 本项目是由 `Python` 写成的网站截图工具。
 
