@@ -1,5 +1,5 @@
 
-daydel=$(date +"%Y-%m-%d" -d "$1 day")
+daydel=$(date +"%Y-%m-%d" -d "$2 day")
 
-find save/$0 -type f -name "*$daydel*.png" -exec rm -rf {} \; 
+find save/$1 -type f -name "*$daydel*.png" -exec rm -rf {} \; 
 
