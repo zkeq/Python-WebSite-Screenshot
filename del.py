@@ -24,7 +24,7 @@ for i in data:
             print("find file:", file_path)
             file_time = os.path.getmtime(file_path)
             print("file time:", file_time)
-            # 86400
-            if file_time < time_now - 10 * day_del:
+            # 86400 = 1天
+            if file_time < time_now - 86400 * day_del:
                 os.remove(file_path)    # 删除文件
                 print("del:", file_path)
