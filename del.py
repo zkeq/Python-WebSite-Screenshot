@@ -22,7 +22,8 @@ for i in data:
         for file in files:
             file_path = os.path.join(root, file)
             print("find file:", file_path)
-            file_time = os.path.getmtime(file_path)
+            # 2022-05-16_06-53-54.png 转换为 时间戳
+            file_time = time.mktime(time.strptime(file.split(".")[0], "%Y-%m-%d_%H-%M-%S"))
             print("file time:", file_time)
             # 86400 = 1天
             lived_time = time_now - 86400 * day_del
