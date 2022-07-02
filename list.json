@@ -19,8 +19,8 @@
     "url": "https://icodeq.com",
     "timeout": 10,
     "real_time_out": 10,
-    "height": 732,
-    "width": 360,
+    "height": 360,
+    "width": 732,
     "daydel": 1
   }
 ]
