@@ -1,0 +1,119 @@
+[
+  {
+    "url": "https://alist.learnonly.xyz",
+    "timeout": 10,
+    "real_time_out": 5,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 1
+  },
+  {
+    "url": "https://www.google.com",
+    "timeout": 10,
+    "real_time_out": 5,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 2
+  },
+  {
+    "url": "https://www.fast.com",
+    "timeout": 10,
+    "real_time_out": 5,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 2
+  },
+  {
+    "url": "https://www.youtube.com",
+    "timeout": 10,
+    "real_time_out": 5,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 2
+  },
+  {
+    "url": "https://blog.learnonly.xyz",
+    "timeout": 10,
+    "real_time_out": 10,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 0
+  },
+  {
+    "url": "https://icodeq.com",
+    "timeout": 10,
+    "real_time_out": 10,
+    "height": 360,
+    "width": 732,
+    "daydel": 30,
+    "full_page": 0
+  },
+  {
+    "url": "https://icodeq.com",
+    "timeout": 10,
+    "real_time_out": 10,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 0
+  },
+  {
+    "url": "https://adobe.onmicrosoft.cn/Front-end_Refinement",
+    "timeout": 10,
+    "real_time_out": 10,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 3
+  },
+  {
+    "url": "https://github.com/zkeq/Python-WebSite-Screenshot",
+    "timeout": 10,
+    "real_time_out": 10,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 1
+  },
+  {
+    "url": "https://tuostudy.com",
+    "timeout": 10,
+    "real_time_out": 15,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 0
+  },
+  {
+    "url": "https://site.icodeq.com/tuostudy.com?period=7d",
+    "timeout": 10,
+    "real_time_out": 15,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 1
+  },
+  {
+    "url": "https://site.icodeq.com/icodeq.com?period=7d",
+    "timeout": 10,
+    "real_time_out": 15,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 1
+  },
+    {
+    "url": "https://uptime.icodeq.com/status/admin",
+    "timeout": 10,
+    "real_time_out": 15,
+    "height": 1080,
+    "width": 1920,
+    "daydel": 30,
+    "full_page": 1
+  }
+]

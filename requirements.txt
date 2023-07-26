@@ -1,0 +1,5 @@
+requests==2.23.0
+lxml==4.5.1
+selenium==3.141.0
+pillow
+oss2~=2.15.0
